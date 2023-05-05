@@ -49,6 +49,7 @@ $ docker-compose up --build -V
 
 
     After Docker finishes building volumes we can start the dev server of notes
+    Postman Collection is available for testing
 ## Test
 
 ```bash

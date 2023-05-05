@@ -1,24 +1,24 @@
 import { Controller, Get, UseGuards } from '@nestjs/common';
 import { Ctx, EventPattern, Payload, RmqContext } from '@nestjs/microservices';
 import { RmqService, JwtAuthGuard } from '@app/common';
-import { BillingService } from './billing.service';
+import { UpdatingService } from './updating.service';
 
 @Controller()
-export class BillingController {
+export class UpdatingController {
   constructor(
-    private readonly billingService: BillingService,
+    private readonly updatingService: UpdatingService,
     private readonly rmqService: RmqService,
   ) {}
 
   @Get()
   getHello(): string {
-    return this.billingService.getHello();
+    return this.updatingService.getHello();
   }
 
-  @EventPattern('order_created')
+  @EventPattern('note_created')
   @UseGuards(JwtAuthGuard)
-  async handleOrderCreated(@Payload() data: any, @Ctx() context: RmqContext) {
-    this.billingService.bill(data);
+  async handlenoteCreated(@Payload() data: any, @Ctx() context: RmqContext) {
+    this.updatingService.update(data);
     this.rmqService.ack(context);
   }
 }

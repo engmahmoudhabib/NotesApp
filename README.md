@@ -41,7 +41,7 @@ $ npm run start:prod
 
 
 ## Init DB
-$   install Docker first
+   install Docker first
 
 ## Create DB ON Docker Container
 $ docker-compose up --build -V

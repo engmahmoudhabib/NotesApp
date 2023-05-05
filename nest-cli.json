@@ -17,13 +17,13 @@
         "tsConfigPath": "apps/notes/tsconfig.app.json"
       }
     },
-    "billing": {
+    "updating": {
       "type": "application",
-      "root": "apps/billing",
+      "root": "apps/updating",
       "entryFile": "main",
-      "sourceRoot": "apps/billing/src",
+      "sourceRoot": "apps/updating/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/billing/tsconfig.app.json"
+        "tsConfigPath": "apps/updating/tsconfig.app.json"
       }
     },
     "auth": {

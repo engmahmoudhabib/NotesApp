@@ -11,7 +11,7 @@ services:
       - mongodb-primary
       - mongodb-secondary
       - mongodb-arbiter
-      - billing
+      - updating
       - auth
       - rabbitmq
     volumes:
@@ -19,14 +19,14 @@ services:
       - /usr/src/app/node_modules
     ports:
       - '3000:3000'
-  billing:
+  updating:
     build:
       context: .
-      dockerfile: ./apps/billing/Dockerfile
+      dockerfile: ./apps/updating/Dockerfile
       target: development
-    command: npm run start:dev billing
+    command: npm run start:dev updating
     env_file:
-      - ./apps/billing/.env
+      - ./apps/updating/.env
     depends_on:
       - mongodb-primary
       - mongodb-secondary

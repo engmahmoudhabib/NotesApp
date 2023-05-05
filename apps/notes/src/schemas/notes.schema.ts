@@ -7,7 +7,7 @@ export class Note extends AbstractDocument {
   title: string;
 
   @Prop()
-  content: number;
+  content: string;
 
   @Prop()
   creator: string;

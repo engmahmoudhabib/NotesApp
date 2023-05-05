@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Inject, Injectable } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
@@ -20,7 +21,7 @@ export class NotesService {
       await lastValueFrom(
         this.updateClient.emit('notes_created', {
           request,
-          Authentication: authentication,
+         Authentication: authentication,
         }),
       );
       await session.commitTransaction();
@@ -30,6 +31,11 @@ export class NotesService {
       throw err;
     }
   }
+
+
+
+
+
 
   async getnotes() {
     return this.NotesRepository.find({});

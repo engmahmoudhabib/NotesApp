@@ -15,7 +15,7 @@ export class UpdatingController {
     return this.updatingService.getHello();
   }
 
-  @EventPattern('note_created')
+  @EventPattern('notes_created')
   @UseGuards(JwtAuthGuard)
   async handlenoteCreated(@Payload() data: any, @Ctx() context: RmqContext) {
     this.updatingService.update(data);

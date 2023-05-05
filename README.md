@@ -13,6 +13,8 @@
         notes is responsible of creating and getting data ( post , get )
         if we want to implement update (patch) or delete (delete) we can do it in any place ( notes , updating )
         all of them communicates  with auth microservices using RabbitMQ 
+   -    used Sentry for Error Reporting / we can use also AppSignal ( implemented the npm model of it )
+
 
 # note 
     DB implemented using Docker
